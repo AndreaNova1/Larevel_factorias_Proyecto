@@ -25,24 +25,10 @@
                     <tbody>
                     @foreach($product as $products)
                         <tr>
-                            <td>{{$product->nombre}}</td>
-                            <td>{{$product->email}}</td>
-                            <td>{{$product->producto}}</td>
-                            <td>{{$product->telefono}}</td>
-                            <td>
-                                <div class="btn-group">
-                                    <a href="{{route('editform', $user->id)}}">
-                                        <i class="fas fa-pencil-alt btn btn-primary mr-5"></i>
-                                    </a>
-
-                                    <form action="{{ route('delete', $user->id) }}" method="POST">
-                                        @csrf @method('DELETE')
-                                        <button type="submit" onclick="return confirm('¿Desea eliminar el usuario?')" class="btn btn-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
+                            <td>{{$products->nombre}}</td>
+                            <td>{{$products->email}}</td>
+                            <td>{{$products->producto}}</td>
+                            <td>{{$products->telefono}}</td>
                         </tr>
                     @endforeach
                     </tbody>
